@@ -1,0 +1,101 @@
+/* Font Family */
+/* ABeeZee */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+/* great vibes*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* Cinzel Decorative */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+/* Courgette */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/* Uncial Antiqua */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+/* All*/
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{
+    background-image: linear-gradient(pink,rgb(255, 212, 220),white);
+    background-repeat: no-repeat;
+    
+}
+/* body::-webkit-scrollbar {
+    display: none;
+  } */
+
+/* nav bar */
+#nav{
+    background-color: pink;
+    height: 10%;
+}
+
+footer{
+    background-color: white;
+}
+
+/* Home */
+
+#bestSellers{
+    width: 263px;
+    height: 205px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+#homeWall{
+    margin-top:4%;
+}
+
+.bi{
+    max-width:5%;
+}
+
+#i {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: white;
+  }
+  
+  #i i {
+    flex: 1;
+    text-align: center;
+  }
+
+.row{
+    text-align: center;
+}
+
+#best-sellers-image{
+    object-fit: contain;
+}
+
+#best-sellers-Div{
+    background-color: rgb(255, 167, 196);
+    margin: 10px;
+}
+
+ #best-sellers-container{
+    background-image: url(/images/Other/Desktop\ -\ 4.png);
+    background-repeat: no-repeat;
+}
+
+img{
+    object-fit: contain;
+}
+
+.card{
+    background-color: pink;
+}
+
+#banner-container{
+    padding-top: 0%;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+/* #banner-row{
+    br
+} */
