@@ -1,0 +1,75 @@
+/* Font Family */
+/* ABeeZee */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+/* great vibes*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* Cinzel Decorative */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+/* Courgette */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/* Uncial Antiqua */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+/* All*/
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{
+    background-image: linear-gradient(white,rgb(255, 215, 222),rgb(253, 223, 228),white);
+    background-repeat: no-repeat;
+    
+}
+/* body::-webkit-scrollbar {
+    display: none;
+  } */
+
+/* nav bar */
+#nav{
+    background-color: pink;
+    height: 10%;
+}
+
+footer{
+    background-color: white;
+}
+
+/* Home */
+
+
+.bi{
+    max-width:5%;
+}
+
+#i {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: white;
+  }
+  
+  #i i {
+    flex: 1;
+    text-align: center;
+  }
+
+.row{
+    text-align: center;
+}
+
+#contact-section{
+    margin-top: 15%;
+}
+
+
+/* other */
+
+input{
+    width: 100%;
+}
+label{
+    width: 100%;
+    text-align: left;
+}
+
