@@ -1,0 +1,85 @@
+/* Font Family */
+/* ABeeZee */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+/* great vibes*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* Cinzel Decorative */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+/* Courgette */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/* Uncial Antiqua */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+/* All*/
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{
+    background-image: linear-gradient(pink,rgb(255, 212, 220),white);
+    background-repeat: no-repeat;
+
+}
+/* nav bar */
+#nav{
+    background-color: pink;
+    height: 10%;
+}
+
+footer{
+    background-color: white;
+}
+
+.bi{
+    max-width:5%;
+}
+
+#i {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: white;
+}
+
+#i i {
+    flex: 1;
+    text-align: center;
+}
+
+.row{
+    text-align: center;
+}
+
+
+#img1{
+    width: 50px;
+    height: 50px;
+    padding: right;
+    margin-left: 1000%;
+}
+
+#img2{
+    width: 50px;
+    height: 50px;
+    margin-right: 10000%;
+
+}
+.container{
+    margin-top: 5%;
+    background-image: url('https://github.com/Chany4/ecomWEB/blob/master/images/other/pexels-eberhardgross-2217366.jpg');
+}
+
+
+#about-row-1{
+    display: flex;
+    justify-content: space-between;
+}
+#about-us{
+    width: 250px;
+    height: 20px;
+}
+#img-2{
+    width: 50px;
+    height: 50px;
+}
