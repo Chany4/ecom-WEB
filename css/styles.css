@@ -12,6 +12,12 @@
 /* Uncial Antiqua */
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
+link[rel="icon"] {
+    /* Adjust the size as needed */
+    width: 100%;
+    height: auto;
+}
+
 html,body{
     margin: 0;
     padding: 0;
@@ -52,6 +58,10 @@ footer{
 
   .row{
     text-align: center;
+}
+
+button:hover{
+    cursor: grab;
 }
 
 /* Home */
@@ -177,10 +187,27 @@ object-fit: cover;
 .carousel-div .images::-webkit-scrollbar{
 display: none;
 }
+
+.scroll .scroll2{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: rgb(255, 81, 81);
+    cursor: grab;
+}
+
+
 .container .scroll{
-    height: 24px;
+    height: 2px;
     width: 100%;
-    background-color: green;
+    background-color: black;
+}
+
+/* Ask about how to fix the above */
+
+.scroll .scroll2::after{
+    content: "";
+
 }
 
 
