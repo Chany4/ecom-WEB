@@ -323,3 +323,8 @@ textarea{
 td{
     font-size: 1.5rem;
 }
+
+.container-fluid6 {
+    margin: 2em 0 0;
+    min-height: 70svh;
+}
