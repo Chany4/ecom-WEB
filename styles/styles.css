@@ -1,3 +1,5 @@
+/* All*/
+
 /* Font Family */
 /* ABeeZee */
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
@@ -10,33 +12,25 @@
 /* Uncial Antiqua */
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
-/* All*/
 html,body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-body{
-    background-image: linear-gradient(white,rgb(255, 215, 222),rgb(253, 223, 228),white);
-    background-repeat: no-repeat;
-    
-}
-/* body::-webkit-scrollbar {
-    display: none;
-  } */
-
-/* nav bar */
 #nav{
     background-color: pink;
     height: 10%;
 }
+#nav li:hover {
+    text-decoration: underline;
+    transition: text-decoration-color 2s ease-in-out;
+    color: white;
+  }
+  
 
 footer{
     background-color: white;
 }
-
-/* Home */
-
 
 .bi{
     max-width:5%;
@@ -54,30 +48,242 @@ footer{
     text-align: center;
   }
 
-.row{
+ 
+
+  .row{
     text-align: center;
 }
+
+/* Home */
+
+#home{
+    background-image: linear-gradient(pink,rgb(250, 217, 223),white);
+}
+
+
+#bestSellers{
+    width: 263px;
+    height: 205px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+#homeWall{
+    margin-top:4%;
+}
+
+#best-sellers-image{
+    object-fit: contain;
+}
+
+#img{
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.card{
+    background-color: pink;
+}
+
+#img2{
+    object-fit: contain;
+    max-width: 100%;
+    height: 40%;
+    
+}
+.col{
+    background-size: contain;
+}
+
+h2{
+    font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: pink;
+}
+
+h1{
+    font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: pink;
+}
+
+h5{
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#carousel-inner{
+    background-color: white;
+}
+
+#customer-service{
+    height: 20%;
+}
+
+#collaborations{
+    height: 20%;
+}
+
+.Delivery{
+    padding-top: 25px;
+}
+#customer-service:hover{
+    transform: scale(115%) ;
+}
+#collaborations:hover{
+    transform: scale(115%) ;
+}
+
+#deliveries:hover{
+    transform: scale(115%) ;
+}
+
+p{
+    text-align: left;
+}
+
+#h4-foooter{
+    text-align: left;
+
+}
+
+#carouselExampleIndicators{
+    margin-top: 20%;
+}
+
+
+/* about */
+
+
+
+#about{
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-eberhardgross-2217366.jpg');
+}
+
+
+#about-row-1{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#about-row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #img-2 {
+    width: 20%;
+  }
+
+  #img-2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  #about-us {
+    width: 30%;
+    text-align: center;
+
+  }
+
+  #about-us h1 {
+    margin: 20px 0;
+
+  }
+
+/* make a media query to make about us bigger */
+
+
+.p1 .p3{
+    text-align: right;
+    font-size: larger;
+}
+a{
+    text-decoration: none;
+}
+
+/* login */
+
+#login{
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-ron-lach-9595294.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover; 
+}
+
+#p-login{
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+    color: black;
+}
+
+#log-in-button{
+    width: 152px;
+    height: 44px;
+    background-color: rgb(255, 226, 226);
+    border-radius: 25px;
+    border: 2px solid pink;
+    position: fixed;
+    top: 10%; 
+    right: 0;
+    margin: 10px;
+    z-index: 1;
+}
+#submit-button-login{
+    width: 50%;
+    height: 44px;
+    background-color: rgb(255, 226, 226);
+    border-radius: 25px;
+    border: 2px solid pink;
+    margin: 10px;
+}
+
+
+/* contact */
+
+/* add media uery for the  two columns to wrap stuff to wrap */
+
+#contact {
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/6772134-uhd_3840_2160_30fps-ezgif.com-video-to-gif-converter.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
 #contact-section{
     margin-top: 10%;
 }
 
 
-/* other */
-
-input{
+#input{
     width: 100%;
     background-color: pink;
     border: 2px solid rgba(255, 192, 203, 0.673);
-    height: 60%;
+    height: 100%;
     border-radius: 25px;
     text-indent: 25px;
+}
+#submit-button{
+    width: 30%;
+    background-color: pink;
+    border: 2px solid rgba(255, 192, 203, 0.673);
+    height: 100%;
+    border-radius: 25px;
 }
 label{
     width: 100%;
     text-indent: 5px;
 }
-p{
+#p{
     text-align: start;
     text-indent: 15px;
     font-family: "Uncial Antiqua", system-ui;
@@ -90,34 +296,30 @@ textarea{
     background-color: pink;
     border: 3px solid pink;
 }
-#img1{
-    width: 50px;
-    height: 50px;
-    padding: right;
-    margin-left: 1000%;
+
+#p-login{
+    text-indent: 25px;
 }
 
-#img2{
-    width: 50px;
-    height: 50px;
-    margin-right: 10000%;
 
-}
-.container{
+
+/* products */
+#all-products{
     margin-top: 5%;
-    background-image: url('https://github.com/Chany4/ecomWEB/blob/master/images/other/pexels-eberhardgross-2217366.jpg');
 }
 
+/* make media queries for this */
+#search-bar{
+    border: 2px solid black;
+    width: 20%;
+    margin-left: 1.5%;
+}
 
-#about-row-1{
-    display: flex;
-    justify-content: space-between;
+/* cart */
+#cart_table{
+    margin-top: 5%;
 }
-#about-us{
-    width: 250px;
-    height: 20px;
-}
-#img-2{
-    width: 50px;
-    height: 50px;
+
+td{
+    font-size: 1.5rem;
 }
