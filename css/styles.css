@@ -151,22 +151,36 @@ p{
 #carouselExampleIndicators{
     margin-top: 20%;
 }
+
+.container{
+    max-width: 95%;
+    width: 95%;
+    box-sizing: border-box;
+}
 .carousel-div .images{
 display: grid;
 gap: 18px;
+font-size: 0;
 overflow-x: auto;
 stroke-width: none;
-grid-template-columns: (10, 1fr);
+overflow-x: auto;
+scrollbar-width: none;
+grid-template-columns: repeat(12, 1fr);
 }
 
 .carousel-div .images .image{
 width: 200px;
-
+height: 300px;
 object-fit: cover;
 }
  /* use the thing that matthew talked about */
 .carousel-div .images::-webkit-scrollbar{
 display: none;
+}
+.container .scroll{
+    height: 24px;
+    width: 100%;
+    background-color: green;
 }
 
 
