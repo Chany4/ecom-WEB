@@ -99,14 +99,12 @@ h2{
     font-family: "Cinzel Decorative", serif;
   font-weight: 700;
   font-style: normal;
-  color: pink;
 }
 
 h1{
     font-family: "Cinzel Decorative", serif;
   font-weight: 700;
   font-style: normal;
-  color: pink;
 }
 
 h5{
@@ -153,6 +151,24 @@ p{
 #carouselExampleIndicators{
     margin-top: 20%;
 }
+.carousel-div .images{
+display: grid;
+gap: 18px;
+overflow-x: auto;
+stroke-width: none;
+grid-template-columns: (10, 1fr);
+}
+
+.carousel-div .images .image{
+width: 200px;
+
+object-fit: cover;
+}
+ /* use the thing that matthew talked about */
+.carousel-div .images::-webkit-scrollbar{
+display: none;
+}
+
 
 
 /* about */
@@ -328,3 +344,6 @@ td{
     margin: 2em 0 0;
     min-height: 70svh;
 }
+
+
+
