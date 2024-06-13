@@ -1,7 +1,4 @@
-/* home */
-
-
-
+/* All*/
 
 /* Font Family */
 /* ABeeZee */
@@ -15,42 +12,24 @@
 /* Uncial Antiqua */
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
-/* All*/
 html,body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-body{
-    background-image: linear-gradient(white,rgb(255, 215, 222),rgb(253, 223, 228),white);
-    background-repeat: no-repeat;
-    
-}
-/* body::-webkit-scrollbar {
-    display: none;
-  } */
-
-/* nav bar */
 #nav{
     background-color: pink;
     height: 10%;
 }
+#nav li:hover {
+    text-decoration: underline;
+    transition: text-decoration-color 2s ease-in-out;
+    color: white;
+  }
+  
 
 footer{
     background-color: white;
-}
-
-/* Home */
-
-#bestSellers{
-    width: 263px;
-    height: 205px;
-    border-radius: 20px;
-    object-fit: contain;
-}
-
-#homeWall{
-    margin-top:4%;
 }
 
 .bi{
@@ -69,22 +48,32 @@ footer{
     text-align: center;
   }
 
-.row{
+ 
+
+  .row{
     text-align: center;
+}
+
+/* Home */
+
+#home{
+    background-image: linear-gradient(pink,rgb(250, 217, 223),white);
+}
+
+
+#bestSellers{
+    width: 263px;
+    height: 205px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+#homeWall{
+    margin-top:4%;
 }
 
 #best-sellers-image{
     object-fit: contain;
-}
-
-#best-sellers-Div{
-    background-color: rgb(255, 167, 196);
-    margin: 10px;
-}
-
- #best-sellers-container{
-    background-image: url(/images/Other/Desktop\ -\ 4.png);
-    background-repeat: no-repeat;
 }
 
 #img{
@@ -96,18 +85,6 @@ footer{
     background-color: pink;
 }
 
-#banner-container{
-    padding-top: 0%;
-    padding: 2%;
-    border-radius: 20px;
-}
-
-/* #banner-row{
-    br
-} */
-
-
-/* other */
 #img2{
     object-fit: contain;
     max-width: 100%;
@@ -117,10 +94,6 @@ footer{
 .col{
     background-size: contain;
 }
-
-.card_footer {
-    background-color: transparent;
-  }
 
 h2{
     font-family: "Cinzel Decorative", serif;
@@ -143,80 +116,59 @@ h5{
 }
 
 #carousel-inner{
-    background-color: rgba(217, 191, 95, 0.328);
+    background-color: white;
 }
 
+#customer-service{
+    height: 20%;
+}
 
+#collaborations{
+    height: 20%;
+}
 
+.Delivery{
+    padding-top: 25px;
+}
+#customer-service:hover{
+    transform: scale(115%) ;
+}
+#collaborations:hover{
+    transform: scale(115%) ;
+}
 
+#deliveries:hover{
+    transform: scale(115%) ;
+}
+
+p{
+    text-align: left;
+}
+
+#h4-foooter{
+    text-align: left;
+
+}
+
+#carouselExampleIndicators{
+    margin-top: 20%;
+}
 
 
 /* about */
 
 
 
-html,body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-body{
-    background-image: linear-gradient(white,rgb(255, 215, 222),rgb(253, 223, 228),white);
-    background-repeat: no-repeat;
-    
-}
-/* body::-webkit-scrollbar {
-    display: none;
-  } */
-
-/* nav bar */
-#nav{
-    background-color: pink;
-    height: 10%;
-}
-
-footer{
-    background-color: white;
+#about{
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-eberhardgross-2217366.jpg');
 }
 
 
-.bi{
-    max-width:5%;
-}
-
-#i {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: white;
-  }
-  
-  #i i {
-    flex: 1;
-    text-align: center;
-  }
-
-.row{
-    text-align: center;
-}
 #about-row-1{
     margin-top: 10%;
     display: flex;
     justify-content: center;
 }
-
-#about{
-    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-eberhardgross-2217366.jpg');
-}
-
-/* #img1{
-    width: 50px;
-    height: 50px
-}
-#img2{
-    width: 50px;
-    height: 50px
-} */
 
 #about-row-1 {
     display: flex;
@@ -246,6 +198,34 @@ footer{
 
 /* make a media query to make about us bigger */
 
+
+.p1 .p3{
+    text-align: right;
+    font-size: larger;
+}
+a{
+    text-decoration: none;
+}
+
+/* login */
+
+#login{
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-ron-lach-9595294.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover; 
+}
+
+#p-login{
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+    color: black;
+}
+
 #log-in-button{
     width: 152px;
     height: 44px;
@@ -258,94 +238,46 @@ footer{
     margin: 10px;
     z-index: 1;
 }
-
-.p1 .p3{
-    text-align: right;
-    font-size: larger;
+#submit-button-login{
+    width: 50%;
+    height: 44px;
+    background-color: rgb(255, 226, 226);
+    border-radius: 25px;
+    border: 2px solid pink;
+    margin: 10px;
 }
-a{
-    text-decoration: none;
-}
-
 
 
 /* contact */
 
+/* add media uery for the  two columns to wrap stuff to wrap */
 
-
-
-/* Font Family */
-/* ABeeZee */
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
-/* great vibes*/
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-/* Cinzel Decorative */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
-/* Courgette */
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-/* Uncial Antiqua */
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
-
-/* All*/
-html,body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-body{
-    background-image: linear-gradient(white,rgb(255, 215, 222),rgb(253, 223, 228),white);
+#contact {
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/6772134-uhd_3840_2160_30fps-ezgif.com-video-to-gif-converter.gif');
     background-repeat: no-repeat;
-    
-}
-/* body::-webkit-scrollbar {
-    display: none;
-  } */
-
-/* nav bar */
-#nav{
-    background-color: pink;
-    height: 10%;
-}
-
-footer{
-    background-color: white;
-}
-
-
-.bi{
-    max-width:5%;
-}
-
-#i {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: white;
+    background-size: cover;
+    background-position: center;
   }
-  
-  #i i {
-    flex: 1;
-    text-align: center;
-  }
-
-.row{
-    text-align: center;
-}
 
 #contact-section{
     margin-top: 10%;
 }
 
 
-/* other */
-
-input{
+#input{
     width: 100%;
     background-color: pink;
     border: 2px solid rgba(255, 192, 203, 0.673);
     height: 100%;
     border-radius: 25px;
     text-indent: 25px;
+}
+#submit-button{
+    width: 30%;
+    background-color: pink;
+    border: 2px solid rgba(255, 192, 203, 0.673);
+    height: 100%;
+    border-radius: 25px;
 }
 label{
     width: 100%;
@@ -365,48 +297,34 @@ textarea{
     border: 3px solid pink;
 }
 
-
-
-/* login */
-
-#login{
-    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-ron-lach-9595294.jpg');
-  background-size: 100% 100%; /* make the background image cover the entire container */
-  background-repeat: no-repeat;
-  width: 100%; /* set the width of the container to 100% */
-  height: 100vh; /* set the height of the container to 100% of the viewport height */
-  object-fit: cover; /* make the background image cover the entire container */
-}
-
 #p-login{
-    font-family: "Courgette", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: larger;
-    color: black;
-}
-
-/* #input{
-    width: 100%;
-    background-color: pink;
-    border: 2px solid rgba(255, 192, 203, 0.673);
-    height: 100%;
-    border-radius: 25px;
     text-indent: 25px;
-} */
-
-
-/* input */
-#carouselExampleIndicators{
-    margin-top: 20%;
 }
+
+
 
 /* products */
-#main{
+#all-products{
     margin-top: 5%;
+}
+
+/* make media queries for this */
+#search-bar{
+    border: 2px solid black;
+    width: 20%;
+    margin-left: 1.5%;
 }
 
 /* cart */
 #cart_table{
     margin-top: 5%;
+}
+
+td{
+    font-size: 1.5rem;
+}
+
+.container-fluid6 {
+    margin: 2em 0 0;
+    min-height: 70svh;
 }
