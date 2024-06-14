@@ -59,7 +59,7 @@ let products =  [
         category: "leather",
         color: "white",
         description: "Beautiful white leather bag with thin strap",
-        image: "https://chany4.github.io/ecomWEB/images/leather/result%20(7).png",
+        image: "https://chany4.github.io/ecomWEB/images/leather/download-removebg-preview.png",
         price: 1289,
     },
     {
