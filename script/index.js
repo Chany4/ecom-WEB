@@ -1,0 +1,1 @@
+window.alert('The footer does not work as this is a demo website');
