@@ -25,7 +25,7 @@ html,body{
 }
 #nav{
     background-color: pink;
-    height: 10%;
+    object-fit: contain;
 }
 #nav li:hover {
     text-decoration: underline;
@@ -162,15 +162,18 @@ p{
     margin-top: 20%;
 }
 
+
+
 .container{
     max-width: 95%;
     width: 95%;
     box-sizing: border-box;
 }
-.carousel-div .images{
+.slider-wrapper .image-list{
 display: grid;
 gap: 18px;
 font-size: 0;
+margin-top: 32px;
 overflow-x: auto;
 stroke-width: none;
 overflow-x: auto;
@@ -178,17 +181,56 @@ scrollbar-width: none;
 grid-template-columns: repeat(12, 1fr);
 }
 
-.carousel-div .images .image{
+ /* use the thing that matthew talked about */
+.slider-wrapper .image-list::-webkit-scrollbar{
+display: none;
+}
+
+.slider-wrapper .image-list .image-item{
 width: 200px;
 height: 300px;
 object-fit: cover;
 }
- /* use the thing that matthew talked about */
-.carousel-div .images::-webkit-scrollbar{
-display: none;
+
+
+.container .slider-scrollbar{
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+.slider-scrollbar .scrollbar-track{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: rgb(255, 81, 81);
+    cursor: grab;
 }
 
-.scroll .scroll2{
+
+.slider-scrollbar .scrollbar-thumbk::after{
+content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: rgb(255, 81, 81);
+    cursor: grab;
+}
+
+
+.slider-scrollbar .scrollbar-thumb{
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: black;
+    cursor: grab;
+}
+
+
+/* Ask about how to fix the above */
+
+.slider-scrollbar .scrollbar-thumb{
     position: absolute;
     height: 100%;
     width: 50%;
@@ -196,24 +238,22 @@ display: none;
     cursor: grab;
 }
 
-
-.container .scroll{
-    height: 2px;
-    width: 100%;
-    background-color: black;
+.slider-scrollbar .scrollbar-thumb::after{
+    content:"" ;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
 }
 
-/* Ask about how to fix the above */
-
-.scroll .scroll2::after{
-    content: "";
+.slider-scrollbar .scrollbar-track{
 
 }
-
 
 
 /* about */
 
+/* style the news letter */
 
 
 #about{
