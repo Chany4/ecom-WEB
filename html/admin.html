@@ -48,25 +48,62 @@
 
       
         <main>
-          <div class="container-fluid">
-            <div class="row">
-              <button class="sort-btn">Sort</button>
-              <button class="update products">Update</button>
+          <div class="container">
+            <h1>Admin Page</h1>
+            <div class="row" all_products></div>
+            <button class="btn btn-primary" onclick="openAddModal()">Add Product</button>
+        </div>
+    
+        <!-- Add Product Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Add Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addForm">
+                            <div class="mb-3">
+                                <label for="productName" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="productName" required>
+                            </div>
+                            <!-- Add other input fields for product details -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="addProduct()">Add Product</button>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-              <table>
-                <thead>
-                  <tr>
-                    <td>Image</td>
-                    <td>Product Name</td>
-                    <td>Category</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </thead>
-              </table>
+        </div>
+    
+        <!-- Edit Product Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editProductName" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="editProductName" required>
+                            </div>
+                            <!-- Add other input fields for editing product details -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="updateProduct()">Save Changes</button>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
         </main>
 
 
