@@ -70,7 +70,7 @@ button:hover{
 /* Home */
 
 #home{
-    background-image: linear-gradient(pink,rgb(250, 217, 223),white);
+    background-image: linear-gradient(rgb(255, 207, 215),rgb(255, 226, 231),white);
 }
 
 
@@ -210,7 +210,45 @@ object-fit: cover;
     border-radius: 8px;
     border: none;
 }
-
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
 
 /* about */
 
@@ -342,7 +380,7 @@ height: 30%;
 /* add media uery for the  two columns to wrap stuff to wrap */
 
 #contact {
-    background-image: url('https://chany4.github.io/ecomWEB/images/other/6772134-uhd_3840_2160_30fps-ezgif.com-video-to-gif-converter.gif');
+    background-image: url('https://chany4.github.io/ecomWEB/images/other/854002-hd_1920_1080_24fps-ezgif.com-video-to-gif-converter.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -399,6 +437,14 @@ textarea{
 #all-products{
     margin-top: 5%;
 }
+#section{
+    margin-top: 90px;
+}
+
+#search-bar{
+    max-width:350px ;
+}
+
 
 /* make media queries for this */
 #search-bar{
@@ -421,5 +467,11 @@ td{
     min-height: 70svh;
 }
 
+
+/* Admin */
+
+#Modal-div{
+    margin-top: 10%;
+}
 
 

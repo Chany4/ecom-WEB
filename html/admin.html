@@ -13,6 +13,10 @@
 
 </head>
 <body>
+  <div class="d-flex justify-content-center mt-5">
+    <h1>Admin</h1>
+  </div>
+
     <nav id="nav" class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand text-white fw-bold fs-3" href="../index.html">VERA</a>
@@ -48,62 +52,75 @@
 
       
         <main>
-          <div class="container">
-            <h1>Admin Page</h1>
-            <div class="row" all_products></div>
-            <button class="btn btn-primary" onclick="openAddModal()">Add Product</button>
-        </div>
-    
-        <!-- Add Product Modal -->
-        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addModalLabel">Add Product</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="addForm">
-                            <div class="mb-3">
-                                <label for="productName" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="productName" required>
-                            </div>
-                            <!-- Add other input fields for product details -->
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="addProduct()">Add Product</button>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addProductModal" id="Modal-div">
+              Add Product
+              </button>
+              </div>
             </div>
-        </div>
-    
-        <!-- Edit Product Modal -->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="editForm">
-                            <input type="hidden" id="editId">
-                            <div class="mb-3">
-                                <label for="editProductName" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="editProductName" required>
-                            </div>
-                            <!-- Add other input fields for editing product details -->
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="updateProduct()">Save Changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="container">
+              <!-- The Modal -->
+              <div class="modal" id="addProductModal">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title">Add Product</h4>
+                              <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                          </div>
+                          <div class="modal-body">
+                              <form id="productForm">
+                                  <div class="form-group">
+                                      <label for="productImg">Image URL:</label>
+                                      <input type="text" class="form-control" id="productImg" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="productName">Name:</label>
+                                      <input type="text" class="form-control" id="productName" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="productCategory">Category:</label>
+                                      <input type="text" class="form-control" id="productCategory" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="productColor">Color:</label>
+                                      <input type="text" class="form-control" id="productColor" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="productDescription">Description:</label>
+                                      <input type="text" class="form-control" id="productDescription" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="productPrice">Price:</label>
+                                      <input type="number" class="form-control" id="productPrice" required>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Add Product</button>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <table class="table checkoutTable" id="productTable">
+                  <thead>
+                      <tr>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>Category</th>
+                          <th>Color</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody id="productList">
+                  </tbody>
+              </table>
+          </div>
         </main>
 
 
@@ -115,7 +132,7 @@
                     <h4 id="h4-foooter">About Vera</h4>
                     <p>Brand Story</p><br>
                     <p>Vera Community</p><br>
-                    <p>Discunts</p>
+                    <p>Discounts</p>
                 </div>
                 <div class="col col-4">
                     <h4 id="h4-foooter">Customer Service</h4><br>
@@ -153,6 +170,8 @@
 
 
     <script src="/script/admin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

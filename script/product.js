@@ -273,39 +273,50 @@ let products =  [
 ]
 
 
-localStorage.setItem("products", JSON.stringify(products));
-let new_products = JSON.parse(localStorage.getItem("products"));
+let checkedItems = JSON.parse(localStorage.getItem('checkout')) || [];
 
-let checkedItems = JSON.parse(localStorage.getItem('checkout')) || []
-
-function add_to_cart(item){
+// Add to cart function
+function add_to_cart(item) {
     checkedItems.push(item);
     localStorage.setItem('checkout', JSON.stringify(checkedItems));
-
-    console.log('works')
-
+    console.log('Added to cart:', item);
 }
 
-function allProducts() {
-    try {
-        let container = document.querySelector('[all_products]');
-
-        new_products.forEach((item) => {
-            container.innerHTML += `
-                <div class="col-md-4">
-                    <img src="${item.image} "style= 'width:200px; height:250px'>
-                    <h2>${item.name}</h2>
-                    <p>Price: ${item.price}</p>
-                    <button class="purchase" value="${item.id}" style:"purchase:hover{background-color:green;}" onclick = 'add_to_cart(${JSON.stringify(item)})'>Add to Cart</button>     
-                </div>
-            `
-            console.log("as intended")
-        });
-    }catch{
-        console.error("error")
-    }
+// Display all products
+function displayProducts(productsToDisplay) {
+    let container = document.querySelector('[all_products]');
+    container.innerHTML = '';
+    productsToDisplay.forEach((item) => {
+        container.innerHTML += `
+            <div class="col-md-4">
+                <img src="${item.image}" style='width:200px; height:250px'>
+                <h2>${item.name}</h2>
+                <p>Price: ${item.price}</p>
+                <button class="purchase" value="${item.id}" style="purchase:hover{background-color:green;}" onclick='add_to_cart(${JSON.stringify(item)})'>Add to Cart</button>
+            </div>
+        `;
+    });
 }
 
-allProducts()
+// Initial display of all products
+displayProducts(products);
 
+// Search function
+function searchProducts() {
+    let searchInput = document.getElementById('searchInput').value.toLowerCase();
+    let filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchInput));
+    displayProducts(filteredProducts);
+}
 
+// Filter function
+function filterProducts() {
+    let categoryFilter = document.getElementById('categoryFilter').value;
+    let colorFilter = document.getElementById('colorFilter').value;
+
+    let filteredProducts = products.filter(product => {
+        return (categoryFilter === '' || product.category === categoryFilter) &&
+               (colorFilter === '' || product.color === colorFilter);
+    });
+
+    displayProducts(filteredProducts);
+}

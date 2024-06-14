@@ -1,10 +1,8 @@
-window.alert('The footer does not work as this is a demo website');
 
-// Add JavaScript functionality for scrolling through images
+
 const sliderWrapper = document.querySelector('.slider-wrapper');
 const scrollbarThumb = document.querySelector('.scrollbar-thumb');
 
-// Adjust scrollbar thumb width based on content width
 function adjustThumbWidth() {
     scrollbarThumb.style.width = (sliderWrapper.scrollWidth * sliderWrapper.clientWidth / sliderWrapper.scrollWidth) + 'px';
 }
@@ -12,8 +10,7 @@ function adjustThumbWidth() {
 // Update scrollbar thumb width when slider is scrolled
 sliderWrapper.addEventListener('scroll', adjustThumbWidth);
 
-// Dragging functionality for scrollbar thumb
-let isDragging = false;
+// Dragging functionality for scrollbar thumblet isDragging = false;
 
 scrollbarThumb.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -33,5 +30,5 @@ window.addEventListener('mouseup', () => {
     isDragging = false;
 });
 
-// Adjust scrollbar thumb width on initial load
+// Adjust scrollbar thumb width
 adjustThumbWidth();

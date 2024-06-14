@@ -1,101 +1,84 @@
-
-
-// Function to open the Add Product modal
-function openAddModal() {
-    let addModal = document.getElementById('addModal');
-    let modal = new bootstrap.Modal(addModal);
-    modal.show();
+let products = JSON.parse(localStorage.getItem("products")) || [];
+function saveProducts() {
+    localStorage.setItem("products", JSON.stringify(products));
 }
-
-// Function to add a new product
-function addProduct() {
-    let productName = document.getElementById('productName').value;
-    // Get other input values similarly
-
-    // Perform validation if needed
-
-    // Add product to the list
-    let newProduct = {
-        id: new_products.length + 1, // Generate a new ID
-        name: productName,
-        // Add other properties
-    };
-    new_products.push(newProduct);
-    localStorage.setItem("products", JSON.stringify(new_products));
-
-    // Close the modal
-    let addModal = document.getElementById('addModal');
-    let modal = bootstrap.Modal.getInstance(addModal);
-    modal.hide();
-
-    // Reload the product list
-    allProducts();
-}
-
-// Function to open the Edit Product modal
-function openEditModal(id) {
-    let editModal = document.getElementById('editModal');
-    let modal = new bootstrap.Modal(editModal);
-    modal.show();
-
-    // Populate the form fields with the product details
-    let product = new_products.find(item => item.id === id);
-    document.getElementById('editId').value = product.id;
-    document.getElementById('editProductName').value = product.name;
-    // Populate other input fields similarly
-}
-
-// Function to update a product
-function updateProduct() {
-    let id = parseInt(document.getElementById('editId').value);
-    let productName = document.getElementById('editProductName').value;
-    // Get other input values similarly
-
-    // Perform validation if needed
-
-    // Find the product in the list and update its details
-    let productIndex = new_products.findIndex(item => item.id === id);
-    new_products[productIndex].name = productName;
-    // Update other properties similarly
-    localStorage.setItem("products", JSON.stringify(new_products));
-
-    // Close the modal
-    let editModal = document.getElementById('editModal');
-    let modal = bootstrap.Modal.getInstance(editModal);
-    modal.hide();
-
-    // Reload the product list
-    allProducts();
-}
-
-// Function to delete a product
-function deleteProduct(id) {
-    // Find the index of the product in the list and remove it
-    let productIndex = new_products.findIndex(item => item.id === id);
-    new_products.splice(productIndex, 1);
-    localStorage.setItem("products", JSON.stringify(new_products));
-
-    // Reload the product list
-    allProducts();
-}
-
-// Function to display all products
-function allProducts() {
-    let container = document.querySelector('[all_products]');
-    container.innerHTML = ''; // Clear the existing content
-
-    new_products.forEach((item) => {
-        container.innerHTML += `
-            <div class="col-md-4">
-                <img src="${item.image}" style="width:200px; height:250px">
-                <h2>${item.name}</h2>
-                <p>Price: ${item.price}</p>
-                <button class="btn btn-primary" onclick="openEditModal(${item.id})">Edit</button>
-                <button class="btn btn-danger" onclick="deleteProduct(${item.id})">Delete</button>
-            </div>
+function displayProducts() {
+    const productList = document.getElementById("productList");
+    productList.innerHTML = "";
+    products.forEach((product, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><input type="text" class="form-control" id="productImg${index}" value="${product.image}" required></td>
+            <td><input type="text" class="form-control" id="productName${index}" value="${product.name}" required></td>
+            <td><input type="text" class="form-control" id="productCategory${index}" value="${product.category}" required></td>
+            <td><input type="text" class="form-control" id="productColor${index}" value="${product.color}" required></td>
+            <td><textarea class="form-control" id="productDescription${index}" required>${product.description}</textarea></td>
+            <td><input type="text" class="form-control" id="productPrice${index}" value="${product.price}" required></td>
+            <td class="d-flex py-4">
+                <button class="btn btn-success me-1" onclick="updateProduct(${index})">Update</button>
+                <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
+            </td>
         `;
+        productList.appendChild(row);
     });
 }
+function addProduct(img, name, category, color, description,price,) {
+    const newProduct = {
+        id: products.length + 1,
+        image: img,
+        name: name,
+        category: category,
+        color:color,
+        description: description,
+        price: parseFloat(price),
+    };
+    products.push(newProduct);
+    saveProducts();
+    displayProducts();
+}
+function updateProduct(index) {
+    const productImg = document.getElementById(`productImg${index}`).value.trim();
+    const productName = document.getElementById(`productName${index}`).value.trim();
+    const productCategory = document.getElementById(`productCategory${index}`).value.trim();
+    const productColor = document.getElementById(`productColor${index}`).value.trim();
+    const productDescription = document.getElementById(`productDescription${index}`).value.trim();
+    const productPrice = document.getElementById(`productPrice${index}`).value.trim();
 
-// Load products on page load
-allProducts();
+    if (!productName || !productCategory ||!productColor  || !productDescription ||!productPrice) {
+        alert("Please fill in all fields.");
+        return;
+    }
+    products[index].image = productImg;
+    products[index].name = productName;
+    products[index].category = productCategory;
+    products[index].color = productColor;
+    products[index].description = productDescription;
+    products[index].price = parseFloat(productPrice);
+
+    saveProducts();
+    displayProducts();
+}
+function deleteProduct(index) {
+    if (confirm("Are you sure you want to delete this product?")) {
+        products.splice(index, 1);
+        saveProducts();
+        displayProducts();
+    }
+}
+document.getElementById("productForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const productImg = document.getElementById("productImg").value.trim();
+    const productName = document.getElementById("productName").value.trim();
+    const productCategory = document.getElementById("productCategory").value.trim();
+    const productColor = document.getElementById("productColor").value.trim();
+    const productDescription = document.getElementById("productDescription").value.trim();
+    const productPrice = document.getElementById("productPrice").value.trim();
+    if (!productImg || !productName || !productCategory || !productPrice || !productDescription) {
+        alert("Please fill in all fields.");
+        return;
+    }
+    addProduct(productImg, productName, productCategory, productColor, productDescription,  productPrice);
+    $('#addProductModal').modal('hide');
+    document.getElementById("productForm").reset();
+});
+displayProducts();
