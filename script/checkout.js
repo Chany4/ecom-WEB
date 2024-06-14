@@ -85,11 +85,11 @@ function purchase() {
         return;
     }
 
-    const confirmPurchase = confirm('Are you sure you want to proceed with the purchase?');
-    if (!confirmPurchase) {
-        console.log('Purchase canceled.');
-        return;
-    }
+    // const confirmPurchase = confirm('Are you sure you want to proceed with the purchase?');
+    // if (!confirmPurchase) {
+    //     console.log('Purchase canceled.');
+    //     return;
+    // }
 
     try {
         cart = [];

@@ -64,6 +64,9 @@ button:hover{
     cursor: grab;
 }
 
+
+
+
 /* Home */
 
 #home{
@@ -164,90 +167,48 @@ p{
 
 
 
-.container{
+#container{
     max-width: 95%;
     width: 95%;
     box-sizing: border-box;
+    background-color: white;
+    border-radius: 30px;
+    background: #ffa8c7;
+    box-shadow: inset 20px 20px 35px #d98fa9,
+            inset -20px -20px 35px #ffc1e5;
+
 }
 .slider-wrapper .image-list{
 display: grid;
 gap: 18px;
 font-size: 0;
 margin-top: 32px;
-overflow-x: auto;
 stroke-width: none;
-overflow-x: auto;
-scrollbar-width: none;
+overflow-x: scroll;
 grid-template-columns: repeat(12, 1fr);
 }
 
- /* use the thing that matthew talked about */
-.slider-wrapper .image-list::-webkit-scrollbar{
-display: none;
-}
-
+/* how to style scroll bar */
 .slider-wrapper .image-list .image-item{
 width: 200px;
 height: 300px;
 object-fit: cover;
 }
 
-
-.container .slider-scrollbar{
-    height: 24px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: black;
-}
-.slider-scrollbar .scrollbar-track{
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: rgb(255, 81, 81);
-    cursor: grab;
-}
-
-
-.slider-scrollbar .scrollbar-thumbk::after{
-content: "";
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: rgb(255, 81, 81);
-    cursor: grab;
-}
-
-
-.slider-scrollbar .scrollbar-thumb{
-    position: absolute;
-    height: 2px;
+#button-best-sellers{
     width: 50%;
-    background: black;
-    cursor: grab;
+    background-color: palevioletred;
+    color: white;
+    border-radius: 10px;
+    border: none;
 }
 
-
-/* Ask about how to fix the above */
-
-.slider-scrollbar .scrollbar-thumb{
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    background: rgb(255, 81, 81);
-    cursor: grab;
-}
-
-.slider-scrollbar .scrollbar-thumb::after{
-    content:"" ;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -10px;
-}
-
-.slider-scrollbar .scrollbar-track{
-
+#button-best-sellers:active{
+   width: 50%;
+    background-color:white;
+    color: palevioletred ;
+    border-radius: 8px;
+    border: none;
 }
 
 
@@ -304,10 +265,33 @@ a{
     text-decoration: none;
 }
 
+#about-img{
+    border-radius: 12px;
+}
+
+#email-about{
+    background-color: pink;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+#news-letter-input{
+border-radius:20px;
+}
+
+#news-letter-input-button{
+border-radius:20px;
+color: black;
+background-color: white;
+border: none;
+width: 8%;
+height: 30%;
+}
+
 /* login */
 
 #login{
-    background-image: url('https://chany4.github.io/ecomWEB/images/other/pexels-ron-lach-9595294.jpg');
+    background-image: url('https://chany4.github.io/ecomWEB/images/about/pexels-eberhardgross-844297.jpg');
   background-size: 100% 100%; 
   background-repeat: no-repeat;
   width: 100%;
@@ -344,6 +328,14 @@ a{
     margin: 10px;
 }
 
+#input-login{
+    width: 100%;
+    background-color: white;
+    border: 5px solid rgba(255, 192, 203, 0.673);
+    height: 100%;
+    border-radius: 25px;
+    text-indent: 14px;
+}
 
 /* contact */
 
@@ -367,7 +359,7 @@ a{
     border: 2px solid rgba(255, 192, 203, 0.673);
     height: 100%;
     border-radius: 25px;
-    text-indent: 25px;
+    text-indent: 14px;
 }
 #submit-button{
     width: 30%;
@@ -392,6 +384,9 @@ label{
 textarea{
     background-color: pink;
     border: 3px solid pink;
+    width: 100%;
+    border-radius: 12px;
+    text-indent: 15px;
 }
 
 #p-login{
