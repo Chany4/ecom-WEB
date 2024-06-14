@@ -473,5 +473,14 @@ td{
 #Modal-div{
     margin-top: 10%;
 }
+.mom{
+    border: 1px solid gray;
+}
 
-
+#purchaseButton{
+    width: 30%;
+    background-color: pink;
+    border: 2px solid rgba(255, 192, 203, 0.673);
+    height: 100%;
+    border-radius: 25px;
+}

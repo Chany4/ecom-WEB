@@ -288,11 +288,11 @@ function displayProducts(productsToDisplay) {
     container.innerHTML = '';
     productsToDisplay.forEach((item) => {
         container.innerHTML += `
-            <div class="col-md-4">
+            <div class="col-md-4 mom p-2">
                 <img src="${item.image}" style='width:200px; height:250px'>
                 <h2>${item.name}</h2>
-                <p>Price: ${item.price}</p>
-                <button class="purchase" value="${item.id}" style="purchase:hover{background-color:green;}" onclick='add_to_cart(${JSON.stringify(item)})'>Add to Cart</button>
+                <p class="text-center">Price: ${item.price}</p>
+                <button class="purchase btn btn-success" value="${item.id}" style="purchase:hover{background-color:green;}" onclick='add_to_cart(${JSON.stringify(item)})'>Add to Cart</button>
             </div>
         `;
     });
