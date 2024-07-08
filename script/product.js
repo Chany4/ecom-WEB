@@ -280,6 +280,7 @@ function add_to_cart(item) {
     checkedItems.push(item);
     localStorage.setItem('checkout', JSON.stringify(checkedItems));
     console.log('Added to cart:', item);
+    alert(`Added ${item.name} to cart` )
 }
 
 // Display all products
@@ -320,3 +321,5 @@ function filterProducts() {
 
     displayProducts(filteredProducts);
 }
+
+
